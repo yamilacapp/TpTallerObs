@@ -6,7 +6,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Martel&family=Teko:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="resources/style.css">
+    <link rel="stylesheet" href="style.css">
 
     <link rel="icon" href="resources/favicon.ico" type="image/ico" />
 </head>
@@ -17,6 +17,26 @@
     <foot>
     </foot>
 
+    <script>
+        const requestURL = 'data/qTarantino.json';
+        const request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+    
+        request.onload = function() {
+            const tarantinoJson = request.response;
+            document.title = "Filmografía: " + tarantinoJson.name;
+            fillContent(tarantinoJson);
+            fillFoot(tarantinoJson.source);
+        }
+        
+        function fillContent(tarantinoObject) {
+        }
+        
+        function fillFoot(sourceObject) {
+        }
+    </script>
 </body>
 
 </html>
