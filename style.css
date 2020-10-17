@@ -18,6 +18,7 @@ table {
 
 td {
     width: 33%;
+    padding: 10px;
     background-color: white;
     margin: 10px;
     box-shadow: 2px 2px 4px #000000;
