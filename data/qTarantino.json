@@ -1,6 +1,435 @@
 {
     "name": "Quentin Tarantino",
+    "birthdate": "1963-04-27",
+    "birthplace": "Knoxville, Tennessee",
     "films": [
+        {
+            "title": "My Best Friend's Birthday",
+            "hispanicTitle": null,
+            "genre": [
+                "Comedia"
+            ],
+            "year": 1987,
+            "runningTime": 70,
+            "starring": [
+                "Craig Hamann",
+                "Quentin Tarantino",
+                "Crystal Shaw Martell",
+                "Allen Garfield"
+            ],
+            "awards": null
+        },
+        {
+            "title": "Reservoir Dogs",
+            "hispanicTitle": "Perros de la calle",
+            "genre": [
+                "Thriller"
+            ],
+            "year": 1992,
+            "runningTime": 99,
+            "starring": [
+                "Harvey Keitel",
+                "Tim Roth",
+                "Chris Penn",
+                "Steve Buscemi",
+                "Lawrence Tierney",
+                "Michael Madsen"
+            ],
+            "awards": null
+        },
+        {
+            "title": "Pulp Fiction",
+            "hispanicTitle": "Tiempos violentos",
+            "genre": [
+                "Thriller",
+                "Drama",
+                "Comedia negra"
+            ],
+            "year": 1994,
+            "runningTime": 154,
+            "starring": [
+                "John Travolta",
+                "Samuel L. Jackson",
+                "Uma Thurman",
+                "Harvey Keitel",
+                "Tim Roth",
+                "Amanda Plummer",
+                "Maria de Medeiros",
+                "Ving Rhames",
+                "Eric Stoltz",
+                "Rosanna Arquette",
+                "Christopher Walken",
+                "Bruce Willis"
+            ],
+            "awards": [
+                {
+                    "name": "Academy Awards",
+                    "nom": 7,
+                    "wins": 1
+                },
+                {
+                    "name": "Palm d'Or",
+                    "nom": 1,
+                    "wins": 1
+                },
+                {
+                    "name": "BAFTA Awards",
+                    "nom": 9,
+                    "wins": 2
+                },
+                {
+                    "name": "Golden Globe Awards",
+                    "nom": 6,
+                    "wins": 1
+                },
+                {
+                    "name": "Saturn Awards",
+                    "nom": 1,
+                    "wins": 1
+                }
+            ]
+        },
+        {
+            "title": "Four Rooms",
+            "hispanicTitle": null,
+            "genre": [
+                "Comedia"
+            ],
+            "year": 1995,
+            "runningTime": 98,
+            "starring": [
+                "Tim Roth",
+                "Antonio Banderas",
+                "Jennifer Beals",
+                "Paul Calderon"
+            ],
+            "awards": null
+        },
+        {
+            "title": "Jackie Brown",
+            "hispanicTitle": "Jackie Brown",
+            "genre": [
+                "Thriller",
+                "Drama"
+            ],
+            "year": 1997,
+            "runningTime": 154,
+            "starring": [
+                "Pam Grier",
+                "Samuel L. Jackson",
+                "Robert Forster",
+                "Bridget Fonda",
+                "Michael Keaton",
+                "Robert De Niro"
+            ],
+            "awards": [
+                {
+                    "name": "Academy Awards",
+                    "nom": 1,
+                    "wins": 0
+                },
+                {
+                    "name": "BAFTA Awards",
+                    "nom": 2,
+                    "wins": 0
+                },
+                {
+                    "name": "Golden Globe Awards",
+                    "nom": 2,
+                    "wins": 0
+                }
+            ]
+        },
+        {
+            "title": "Kill Bill: Volume 1",
+            "hispanicTitle": "Kill Bill: Volumen 1",
+            "genre": [
+                "Acción",
+                "Artes marciales"
+            ],
+            "year": 2001,
+            "runningTime": 111,
+            "starring": [
+                "Uma Thurman",
+                "Lucy Liu",
+                "Vivica A. Fox",
+                "Michael Madsen",
+                "Daryl Hannah",
+                "David Carradine",
+                "Sonny Chiba",
+                "Julie Dreyfus",
+                "Chiaki Kuriyama",
+                "Gordon Liu",
+                "Michael Parks"
+            ],
+            "awards": [
+                {
+                    "name": "BAFTA Awards",
+                    "nom": 5,
+                    "wins": 0
+                },
+                {
+                    "name": "Golden Globe Awards",
+                    "nom": 1,
+                    "wins": 0
+                },
+                {
+                    "name": "Saturn Awards",
+                    "nom": 7,
+                    "wins": 2
+                }
+            ]
+        },
+        {
+            "title": "Kill Bill: Volume 2",
+            "hispanicTitle": "Kill Bill: Volumen 2",
+            "genre": [
+                "Acción",
+                "Artes marciales"
+            ],
+            "year": 2004,
+            "runningTime": 136,
+            "starring": [
+                "Uma Thurman",
+                "David Carradine",
+                "Michael Madsen",
+                "Daryl Hannah",
+                "Gordon Liu",
+                "Michael Parks"
+            ],
+            "awards": [
+                {
+                    "name": "Golden Globe Awards",
+                    "nom": 2,
+                    "wins": 0
+                },
+                {
+                    "name": "Saturn Awards",
+                    "nom": 7,
+                    "wins": 3
+                }
+            ]
+        },
+        {
+            "title": "Death Proof",
+            "hispanicTitle": "A prueba de muerte",
+            "genre": [
+                "Acción",
+                "Suspenso"
+            ],
+            "year": 2007,
+            "runningTime": 113,
+            "starring": [
+                "Kurt Russell",
+                "Rosario Dawson",
+                "Vanessa Ferlito",
+                "Jordan Ladd",
+                "Rose McGowan",
+                "Sydney Poitier",
+                "Tracie Thoms",
+                "Mary Elizabeth Winstead",
+                "Zoë Bell"
+            ],
+            "awards": [
+                {
+                    "name": "Palm d'Or",
+                    "nom": 1,
+                    "wins": 0
+                },
+                {
+                    "name": "Saturn Awards",
+                    "nom": 1,
+                    "wins": 0
+                }
+            ]
+        },
+        {
+            "title": "Inglourious Basterds",
+            "hispanicTitle": "Bastardos sin gloria",
+            "genre": [
+                "Bélico",
+                "Drama",
+                "Humor negro"
+            ],
+            "year": 2009,
+            "runningTime": 153,
+            "starring": [
+                "Brad Pitt",
+                "Christoph Waltz",
+                "Michael Fassbender",
+                "Eli Roth",
+                "Diane Kruger",
+                "Daniel Brühl",
+                "Til Schweiger",
+                "Mélanie Laurent",
+                "August Diehl",
+                "Julie Dreyfus",
+                "Sylvester Groth",
+                "Jacky Ido",
+                "Denis Menochet",
+                "Mike Myers",
+                "Rod Taylor",
+                "Martin Wuttke"
+            ],
+            "awards": [
+                {
+                    "name": "Academy Awards",
+                    "nom": 8,
+                    "wins": 1
+                },
+                {
+                    "name": "Palm d'Or",
+                    "nom": 1,
+                    "wins": 0
+                },
+                {
+                    "name": "BAFTA Awards",
+                    "nom": 6,
+                    "wins": 1
+                },
+                {
+                    "name": "Golden Globe Awards",
+                    "nom": 4,
+                    "wins": 1
+                },
+                {
+                    "name": "Saturn Awards",
+                    "nom": 7,
+                    "wins": 1
+                }
+            ]
+        },
+        {
+            "title": "Django Unchained",
+            "hispanicTitle": "Django sin cadenas",
+            "genre": [
+                "Western dramático"
+            ],
+            "year": 2012,
+            "runningTime": 165,
+            "starring": [
+                "Jamie Foxx",
+                "Christoph Waltz",
+                "Leonardo DiCaprio",
+                "Kerry Washington",
+                "Samuel L. Jackson",
+                "Walton Goggins",
+                "Dennis Christopher",
+                "James Remar",
+                "Michael Parks",
+                "Don Johnson"
+            ],
+            "awards": [
+                {
+                    "name": "Academy Awards",
+                    "nom": 5,
+                    "wins": 2
+                },
+                {
+                    "name": "BAFTA Awards",
+                    "nom": 5,
+                    "wins": 2
+                },
+                {
+                    "name": "Golden Globe Awards",
+                    "nom": 5,
+                    "wins": 2
+                },
+                {
+                    "name": "Saturn Awards",
+                    "nom": 4,
+                    "wins": 1
+                }
+            ]
+        },
+        {
+            "title": "The Hateful Eight",
+            "hispanicTitle": null,
+            "genre": [
+                "Western",
+                "Misterio"
+            ],
+            "year": 2015,
+            "runningTime": 187,
+            "starring": [
+                "Samuel L. Jackson",
+                "Kurt Russell",
+                "Jennifer Jason Leigh",
+                "Walton Goggins",
+                "Demián Bichir",
+                "Tim Roth",
+                "Michael Madsen",
+                "Bruce Dern",
+                "James Parks",
+                "Channing Tatum"
+            ],
+            "awards": [
+                {
+                    "name": "Academy Awards",
+                    "nom": 3,
+                    "wins": 1
+                },
+                {
+                    "name": "BAFTA Awards",
+                    "nom": 3,
+                    "wins": 1
+                },
+                {
+                    "name": "Golden Globe Awards",
+                    "nom": 3,
+                    "wins": 1
+                },
+                {
+                    "name": "Saturn Awards",
+                    "nom": 5,
+                    "wins": 0
+                }
+            ]
+        },
+        {
+            "title": "Once Upon a Time in Hollywood",
+            "hispanicTitle": "Había una vez en Hollywood",
+            "genre": [
+                "Comedia dramática",
+                "Humor negro"
+            ],
+            "year": 2019,
+            "runningTime": 161,
+            "starring": [
+                "Leonardo DiCaprio",
+                "Brad Pitt",
+                "Margot Robbie",
+                "Emile Hirsch",
+                "Margaret Qualley",
+                "Timothy Olyphant",
+                "Austin Butler",
+                "Dakota Fanning",
+                "Bruce Dern",
+                "Al Pacino"
+            ],
+            "awards": [
+                {
+                    "name": "Academy Awards",
+                    "nom": 10,
+                    "wins": 2
+                },
+                {
+                    "name": "Palm d'Or",
+                    "nom": 1,
+                    "wins": 0
+                },
+                {
+                    "name": "BAFTA Awards",
+                    "nom": 10,
+                    "wins": 1
+                },
+                {
+                    "name": "Golden Globe Awards",
+                    "nom": 5,
+                    "wins": 3
+                }
+            ]
+        }
     ],
     "source": {
         "string": "Wikipedia",
