@@ -17,11 +17,15 @@ function fillContent(tarantinoObject) {
     const caption = document.createElement("caption");
     const h1 = document.createElement('h1');
     const h5 = document.createElement('h5');
+    const img = document.createElement('img');
 
+    img.src = tarantinoObject.image;
+    console.log(tarantinoObject.image);
     h1.textContent = tarantinoObject.name;
     caption.appendChild(h1);
     h5.textContent = new Date(tarantinoObject.birthdate).toLocaleDateString() + " - " + tarantinoObject.birthplace;
     caption.appendChild(h5);
+    caption.appendChild(img);
     table.appendChild(caption);
     
     fillTable(table, tarantinoObject.films);
