@@ -74,6 +74,9 @@ function fillFoot(sourceObject) {
 function fillCard(column, film) {
     const cardDiv = document.createElement('div');
     cardDiv.className = 'card text-center';
+    const img = document.createElement('img');
+    img.src= film.image;
+    img.className = 'card-img-top';
     const bodyDiv = document.createElement('div');
     bodyDiv.className = 'card-body';
 
@@ -124,6 +127,7 @@ function fillCard(column, film) {
     bodyDiv.appendChild(information);
     bodyDiv.appendChild(starring);
     bodyDiv.appendChild(awards);
+    cardDiv.appendChild(img);
     cardDiv.appendChild(bodyDiv);
     column.appendChild(cardDiv);
 }

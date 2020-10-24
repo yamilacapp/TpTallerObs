@@ -6,6 +6,7 @@
     "films": [
         {
             "title": "My Best Friend's Birthday",
+            "image": "resources/image1.jpg",
             "hispanicTitle": null,
             "genre": [
                 "Comedia"
@@ -22,6 +23,7 @@
         },
         {
             "title": "Reservoir Dogs",
+            "image": "resources/image2.jpg",
             "hispanicTitle": "Perros de la calle",
             "genre": [
                 "Thriller"
@@ -40,6 +42,7 @@
         },
         {
             "title": "Pulp Fiction",
+            "image": "resources/image3.jpg",
             "hispanicTitle": "Tiempos violentos",
             "genre": [
                 "Thriller",
@@ -92,6 +95,7 @@
         },
         {
             "title": "Four Rooms",
+            "image": "resources/image4.jpg",
             "hispanicTitle": null,
             "genre": [
                 "Comedia"
@@ -108,6 +112,7 @@
         },
         {
             "title": "Jackie Brown",
+            "image": "resources/image5.jpg",
             "hispanicTitle": "Jackie Brown",
             "genre": [
                 "Thriller",
@@ -143,6 +148,7 @@
         },
         {
             "title": "Kill Bill: Volume 1",
+            "image": "resources/image6.jpg",
             "hispanicTitle": "Kill Bill: Volumen 1",
             "genre": [
                 "Acción",
@@ -183,6 +189,7 @@
         },
         {
             "title": "Kill Bill: Volume 2",
+            "image": "resources/image7.jpg",
             "hispanicTitle": "Kill Bill: Volumen 2",
             "genre": [
                 "Acción",
@@ -213,6 +220,7 @@
         },
         {
             "title": "Death Proof",
+            "image": "resources/image8.jpg",
             "hispanicTitle": "A prueba de muerte",
             "genre": [
                 "Acción",
@@ -246,6 +254,7 @@
         },
         {
             "title": "Inglourious Basterds",
+            "image": "resources/image9.jpg",
             "hispanicTitle": "Bastardos sin gloria",
             "genre": [
                 "Bélico",
@@ -302,6 +311,7 @@
         },
         {
             "title": "Django Unchained",
+            "image": "resources/image10.jpg",
             "hispanicTitle": "Django sin cadenas",
             "genre": [
                 "Western dramático"
@@ -345,6 +355,7 @@
         },
         {
             "title": "The Hateful Eight",
+            "image": "resources/image11.jpg",
             "hispanicTitle": null,
             "genre": [
                 "Western",
@@ -389,6 +400,7 @@
         },
         {
             "title": "Once Upon a Time in Hollywood",
+            "image": "resources/image12.jpg",
             "hispanicTitle": "Había una vez en Hollywood",
             "genre": [
                 "Comedia dramática",

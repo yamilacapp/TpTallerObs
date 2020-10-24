@@ -1,0 +1,13 @@
+body{
+    background-color: #f4f4f4;
+}
+
+.card{
+    margin-top: 20px;
+    height: 850px;
+    box-shadow: 2px 2px 4px #000000;
+}
+
+.card-body{
+    font-family: 'Josefin Sans', sans-serif;
+}
