@@ -7,72 +7,100 @@ request.send();
 request.onload = function() {
     const tarantinoJson = request.response;
     document.title = "Filmografía: " + tarantinoJson.name;
+    fillHeader(tarantinoJson);
     fillContent(tarantinoJson);
     fillFoot(tarantinoJson.source);
 }
 
+function fillHeader(tarantinoObject) {
+    const header = document.querySelector('header');
+    const headerDiv = document.createElement('div');
+    headerDiv.className = 'container-fluid text-center';
+    const h1 = document.createElement('h1');
+    const img = document.createElement('img');
+    img.className = 'img-thumbnail';
+    img.alt = tarantinoObject.name;
+    const h5 = document.createElement('h5');
+    h5.className = 'text-muted';
+
+    h1.textContent = tarantinoObject.name;
+    img.src = tarantinoObject.image;
+    h5.textContent = new Date(tarantinoObject.birthdate).toLocaleDateString() + " - " + tarantinoObject.birthplace;
+
+    headerDiv.appendChild(h1);
+    headerDiv.appendChild(img);
+    headerDiv.appendChild(h5);
+    header.appendChild(headerDiv);
+}
+
 function fillContent(tarantinoObject) {
     const content = document.querySelector('content');
-    const table = document.createElement('table');
-    const caption = document.createElement("caption");
-    const h1 = document.createElement('h1');
-    const h5 = document.createElement('h5');
-    const img = document.createElement('img');
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'container-fluid';
 
-    img.src = tarantinoObject.image;
-    console.log(tarantinoObject.image);
-    h1.textContent = tarantinoObject.name;
-    caption.appendChild(h1);
-    h5.textContent = new Date(tarantinoObject.birthdate).toLocaleDateString() + " - " + tarantinoObject.birthplace;
-    caption.appendChild(h5);
-    caption.appendChild(img);
-    table.appendChild(caption);
-    
-    fillTable(table, tarantinoObject.films);
-    
-    content.appendChild(table);
-}
-
-function fillTable(table, filmsArray) {
-    
+    const filmsArray = tarantinoObject.films
     for(var i = 0; i < filmsArray.length; i++) {
         var row;
-        if(i % 3 == 0){
-            row = document.createElement('tr');
-            table.appendChild(row);
+        if(i % 3 == 0) {
+            row = document.createElement('div');
+            row.className = 'row';
+            contentDiv.appendChild(row);
         }
-        const cell = document.createElement('td');
-        fillCell(cell, filmsArray[i]),
-        row.appendChild(cell);
+        const col = document.createElement('div');
+        col.className = 'col';
+        fillCard(col, filmsArray[i])
+        row.appendChild(col);
     }
     
+    content.appendChild(contentDiv);
 }
 
-function fillCell(cell, film) {
-    const headerDiv = document.createElement('div');
-    headerDiv.className = 'header';
-    const filmName = document.createElement('h3');
-    const hispName = document.createElement('p');
-    const information = document.createElement('p');
-    information.className = 'grey';
-    const genre = document.createElement('p');
-    const starringDiv = document.createElement('div');
-    starringDiv.className = 'starring';
+function fillFoot(sourceObject) {
+    const foot = document.querySelector('foot');
+    const footDiv = document.createElement('div');
+    footDiv.className = 'container-fluid';
+    const p = document.createElement('p');
+    p.className = 'text-right';
+    
+    const string = sourceObject.string;
+    const source = string.link(sourceObject.url);
+    p.innerHTML = "Fuente: " + source;
+    
+    footDiv.appendChild(document.createElement('hr'));
+    footDiv.appendChild(p);
+    foot.appendChild(footDiv);
+}
+
+function fillCard(column, film) {
+    const cardDiv = document.createElement('div');
+    cardDiv.className = 'card text-center';
+    const bodyDiv = document.createElement('div');
+    bodyDiv.className = 'card-body';
+
+
+    const filmName = document.createElement('h4');
+    filmName.className = 'card-title';
+    const hispName = document.createElement('h6');
+    hispName.className = 'card-title';
+    const genre = document.createElement('h6');
+    genre.className = 'card-title small';
+    const information = document.createElement('h6');
+    information.className = 'card-title small font-weight-light';
     const starring = document.createElement('dl');
     const actors = document.createElement('dt');
-    const awardsDiv = document.createElement('div');
-    awardsDiv.className = 'awards';
+    actors.className = 'text-left font-weight-normal';
     const awards = document.createElement('dl');
     const accolades = document.createElement('dt');
-    
-    // header
+    accolades.className = 'text-left font-weight-normal';
+
+    // Card header
     filmName.textContent = film.title;
     if(film.hispanicTitle != null)
         hispName.textContent = "(" + film.hispanicTitle + ")";
     genre.textContent = film.genre.join(" - ");
     information.textContent = film.year + " - " + film.runningTime + " min.";
-    
-    // starring
+
+        // starring
     actors.textContent = "Actores:";
     starring.appendChild(actors);
     const actorsList = film.starring;
@@ -88,16 +116,16 @@ function fillCell(cell, film) {
             awards.appendChild(award);
         }
     }
-    
-    headerDiv.appendChild(filmName);
-    headerDiv.appendChild(hispName);
-    headerDiv.appendChild(genre);
-    headerDiv.appendChild(information);
-    starringDiv.appendChild(starring);
-    awardsDiv.appendChild(awards);
-    cell.appendChild(headerDiv);
-    cell.appendChild(starringDiv);
-    cell.appendChild(awardsDiv);
+
+    // Elements nesting
+    bodyDiv.appendChild(filmName);
+    bodyDiv.appendChild(hispName);
+    bodyDiv.appendChild(genre);
+    bodyDiv.appendChild(information);
+    bodyDiv.appendChild(starring);
+    bodyDiv.appendChild(awards);
+    cardDiv.appendChild(bodyDiv);
+    column.appendChild(cardDiv);
 }
 
 function fillDescriptionList (descriptionList, itemsList) {
@@ -118,19 +146,4 @@ function getDescriptionItem(line) {
     const item = document.createElement('dd');
     item.textContent = line;
     return item;
-}
-
-function fillFoot(sourceObject) {
-    const foot = document.querySelector('foot');
-    const footDiv = document.createElement('div');
-    footDiv.className = 'foot';
-    const p = document.createElement('p');
-    
-    const string = sourceObject.string;
-    const source = string.link(sourceObject.url);
-    p.innerHTML = "Fuente: " + source;
-    
-    footDiv.appendChild(document.createElement('hr'));
-    footDiv.appendChild(p);
-    foot.appendChild(footDiv);
 }
