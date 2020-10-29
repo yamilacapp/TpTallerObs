@@ -1,58 +1,64 @@
-const requestURL = 'data/qTarantino.json';
-const request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'json';
-request.send();
-
-request.onload = function() {
-    const tarantinoJson = request.response;
-    document.title = "Filmografía: " + tarantinoJson.name;
-    fillHeader(tarantinoJson);
-    fillContent(tarantinoJson);
-    fillFoot(tarantinoJson.source);
-}
+let cards = "";
+$.getJSON("data/qTarantino.json", function(data) {
+    document.title = "Filmografía: " + data.name;
+    fillHeader(data);
+    fillContent(data);
+    fillFoot(data.source);
+});
 
 function fillHeader(tarantinoObject) {
-    const header = document.querySelector('header');
-    const headerDiv = document.createElement('div');
-    headerDiv.className = 'container-fluid text-center';
-    const h1 = document.createElement('h1');
-    const img = document.createElement('img');
-    img.className = 'img-thumbnail';
-    img.alt = tarantinoObject.name;
-    const h5 = document.createElement('h5');
-    h5.className = 'text-muted';
+    let cabecera="";
+    cabecera += "<div class='row'>";
+    cabecera += "<div class='col-12 text-center'>";
+    cabecera += "<h1>" + tarantinoObject.name + "</h1>";
+    cabecera += "<img src='" + tarantinoObject.image + "' class='img-thumbnail'>";
+    cabecera += "<h5 class='text-muted'>" + new Date(tarantinoObject.birthdate).toLocaleDateString() + " - " + tarantinoObject.birthplace + "</h5>";
+    cabecera += "</div></div>";
+    $("#header").html(cabecera);
+   // const header = document.querySelector('header');
+   // const headerDiv = document.createElement('div');
+  //  headerDiv.className = 'container-fluid text-center';
+  // const h1 = document.createElement('h1');
+  //  const img = document.createElement('img');
+  //  img.className = 'img-thumbnail';
+  //  img.alt = tarantinoObject.name;
+  //  const h5 = document.createElement('h5');
+  //  h5.className = 'text-muted';
 
-    h1.textContent = tarantinoObject.name;
-    img.src = tarantinoObject.image;
-    h5.textContent = new Date(tarantinoObject.birthdate).toLocaleDateString() + " - " + tarantinoObject.birthplace;
+  //  h1.textContent = tarantinoObject.name;
+  //  img.src = tarantinoObject.image;
+  //  h5.textContent = new Date(tarantinoObject.birthdate).toLocaleDateString() + " - " + tarantinoObject.birthplace;
 
-    headerDiv.appendChild(h1);
-    headerDiv.appendChild(img);
-    headerDiv.appendChild(h5);
-    header.appendChild(headerDiv);
+  //  headerDiv.appendChild(h1);
+  //  headerDiv.appendChild(img);
+  //  headerDiv.appendChild(h5);
+  //  header.appendChild(headerDiv);
 }
 
 function fillContent(tarantinoObject) {
-    const content = document.querySelector('content');
-    const contentDiv = document.createElement('div');
-    contentDiv.className = 'container-fluid';
-
+   // const content = document.querySelector('content');
+   // const contentDiv = document.createElement('div');
+   // contentDiv.className = 'container-fluid';
+    cards +="<div class='row'>";
     const filmsArray = tarantinoObject.films
     for(var i = 0; i < filmsArray.length; i++) {
-        var row;
-        if(i % 3 == 0) {
-            row = document.createElement('div');
-            row.className = 'row';
-            contentDiv.appendChild(row);
-        }
-        const col = document.createElement('div');
-        col.className = 'col';
-        fillCard(col, filmsArray[i])
-        row.appendChild(col);
+         cards += "<div class='col-4'>";
+      //  if(i % 3 == 0) {
+           // row += "";
+           // row = document.createElement('div');
+           // row.className = 'row';
+           // contentDiv.appendChild(row);
+      //  }
+
+       // const col = document.createElement('div');
+       // col.className = 'col';
+        fillCard( filmsArray[i])
+       // row.appendChild(col);
+       cards += "</div>";
     }
-    
-    content.appendChild(contentDiv);
+    cards += "</div>";
+    $("#contenido").html(cards);
+    //content.appendChild(contentDiv);
 }
 
 function fillFoot(sourceObject) {
@@ -71,24 +77,48 @@ function fillFoot(sourceObject) {
     foot.appendChild(footDiv);
 }
 
-function fillCard(column, film) {
-    const cardDiv = document.createElement('div');
-    cardDiv.className = 'card text-center';
-    const img = document.createElement('img');
-    img.src= film.image;
-    img.className = 'card-img-top';
-    const bodyDiv = document.createElement('div');
-    bodyDiv.className = 'card-body';
+function fillCard( film) {
+    cards += "<div class='card text-center'>";
+    cards += "<img src='"+ film.image + "' class='card-img-top'>";
+    cards += "<div class='card-body'>";
+    cards += "<h4 class='card-title'>" + film.title +"</h4>";
+    if (film.hispanicTitle != null){
+    cards += "<h6 class='card-title'> (" + film.hispanicTitle + ")</h6>";
+    }
+    cards += "<h6 class='card-title small'> " + film.genre.join(" - ") + "</h6>";
+    cards += "<h6 class='card-title small font-weight-light'>" + film.year + " - " + film.runningTime + " min. </h6>";
+    //BOTON MODAL
+    cards += "<button type='button' class='btn btn - primary' data-toggle='modal' data-target='#exampleModal'> Ver Informacion </button >"
+    cards += "</div></div>";
+    //MODAL
+    //cards += '<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">< div class="modal-dialog" ><div class="modal-content"><div class="modal-header">';
+   // cards += '<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>';
+   // cards += '<button type="button" class="close" data-dismiss="modal" aria-label="Close">';
+   // cards += '<span aria-hidden="true">&times;</span></button></div>';
+   // cards += '<div class="modal-body">';
+    //AGREGAR BODY
+   // cards += '</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button><button type="button" class="btn btn-primary">Save changes</button></div></div></div ></div >';
+    //FIN MODAL
 
 
-    const filmName = document.createElement('h4');
-    filmName.className = 'card-title';
-    const hispName = document.createElement('h6');
-    hispName.className = 'card-title';
-    const genre = document.createElement('h6');
-    genre.className = 'card-title small';
-    const information = document.createElement('h6');
-    information.className = 'card-title small font-weight-light';
+    
+    //const cardDiv = document.createElement('div');
+   // cardDiv.className = 'card text-center';
+   // const img = document.createElement('img');
+   // img.src= film.image;
+   // img.className = 'card-img-top';
+   // const bodyDiv = document.createElement('div');
+   // bodyDiv.className = 'card-body';
+
+
+   // const filmName = document.createElement('h4');
+   // filmName.className = 'card-title';
+   // const hispName = document.createElement('h6');
+   // hispName.className = 'card-title';
+    //const genre = document.createElement('h6');
+   // genre.className = '';
+   // const information = document.createElement('h6');
+   // information.className = 'card-title small font-weight-light';
     const starring = document.createElement('dl');
     const actors = document.createElement('dt');
     actors.className = 'text-left font-weight-normal';
@@ -97,11 +127,11 @@ function fillCard(column, film) {
     accolades.className = 'text-left font-weight-normal';
 
     // Card header
-    filmName.textContent = film.title;
-    if(film.hispanicTitle != null)
-        hispName.textContent = "(" + film.hispanicTitle + ")";
-    genre.textContent = film.genre.join(" - ");
-    information.textContent = film.year + " - " + film.runningTime + " min.";
+    //filmName.textContent = film.title;
+   // if(film.hispanicTitle != null)
+     //   hispName.textContent = "(" + film.hispanicTitle + ")";
+   // genre.textContent = film.genre.join(" - ");
+   // information.textContent = film.year + " - " + film.runningTime + " min.";
 
         // starring
     actors.textContent = "Actores:";
@@ -121,15 +151,15 @@ function fillCard(column, film) {
     }
 
     // Elements nesting
-    bodyDiv.appendChild(filmName);
-    bodyDiv.appendChild(hispName);
-    bodyDiv.appendChild(genre);
-    bodyDiv.appendChild(information);
-    bodyDiv.appendChild(starring);
-    bodyDiv.appendChild(awards);
-    cardDiv.appendChild(img);
-    cardDiv.appendChild(bodyDiv);
-    column.appendChild(cardDiv);
+   // bodyDiv.appendChild(filmName);
+   // bodyDiv.appendChild(hispName);
+   // bodyDiv.appendChild(genre);
+   //  bodyDiv.appendChild(information);
+   // bodyDiv.appendChild(starring);
+   // bodyDiv.appendChild(awards);
+   // cardDiv.appendChild(img);
+   // cardDiv.appendChild(bodyDiv);
+   // column.appendChild(cardDiv);
 }
 
 function fillDescriptionList (descriptionList, itemsList) {
