@@ -1,4 +1,10 @@
 # Práctica Profesional I - Taller de Observación
-## Responsive design
-
-### Filmografía de Quentin Tarantino
+## Filmografía de Quentin Tarantino
+### Responsive design
+Tecnologías utilizadas
+- HTML
+- CSS
+- JSON
+- Javascript
+- Bootstrap
+- jQuery
