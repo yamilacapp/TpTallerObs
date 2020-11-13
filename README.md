@@ -7,3 +7,7 @@ Tecnologías utilizadas
 - JSON
 - Javascript
 - Bootstrap
+
+Alumnos:
+-Yamila Cappari
+-Adrián Córdoba
