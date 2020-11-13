@@ -5,3 +5,7 @@ Tecnologías utilizadas
 - CSS
 - JSON
 - Javascript
+
+Alumnos:
+-Yamila Cappari
+-Adrián Córdoba
