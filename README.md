@@ -9,6 +9,6 @@ Tecnologías utilizadas
 - Bootstrap
 - jQuery
 
-###Alumnos:
+Alumnos:
 -Yamila Cappari
 -Adrián Córdoba
